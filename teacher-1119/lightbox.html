@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lb/css/lightbox.css">
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="lb/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 400,
+            'fadeDuration': 400,
+            'imageFadeDuration': 400,
+            'albumLabel':"第%1張，共%2張",
+            'showImageNumberLabel':false
+        })
+    </script>
+</head>
+
+<body>
+    <a href="../images/001.jpg" data-lightbox="qqq" data-title="QWERTY">
+        <img src="../images/001.jpg" alt="">
+    </a>
+    <a href="../images/002.jpg" data-lightbox="qqq">
+        <img src="../images/002.jpg" alt="">
+    </a>
+    <a href="../images/003.jpg" data-lightbox="qqq">
+        <img src="../images/003.jpg" alt="">
+    </a>
+    <a href="../images/004.jpg" data-lightbox="qqq">
+        <img src="../images/004.jpg" alt="">
+    </a>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+/*            width: 3200px;*/
+        }
+        .slider {
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slider .photo {
+            width: 1200px;
+            height: 600px;
+            float: left;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var currentPosition = 0;
+            var photo = $(".photo");
+            var photoWidth = photo.width();
+            var photoNum = $(".photo").length;
+            console.log(photoWidth);
+            
+            var timeout =3000;
+            var speed = 1200;
+            
+            $(".wrapper").css("width",photoWidth*photoNum);
+            
+            
+            function move(){
+                $(".wrapper").animate({
+                    "marginLeft":-(photoWidth*currentPosition)
+                },speed);
+            }
+            function cycle(){
+                if(currentPosition==photoNum-1){
+                    currentPosition=0;
+                }else{
+                    currentPosition++;
+                }
+                move();
+            }
+            setInterval(cycle,timeout);
+            
+        })
+    </script>
+</head>
+<body>
+    <div class="slider">
+        <div class="wrapper">
+            <div class="photo">
+                <img src="../images/s-1.jpg" alt="">
+            </div>
+            <div class="photo">
+                <img src="../images/s-3.jpg" alt="">
+            </div>
+            <div class="photo">
+                <img src="../images/s-5.jpg" alt="">
+            </div>
+            <div class="photo">
+                <img src="../images/s-7.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

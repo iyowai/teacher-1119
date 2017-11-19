@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider .photo {
+            width: 1200px;
+            height: 600px;
+            position: absolute;
+            display: none;
+        }
+        .slider .photo:nth-of-type(1){
+/*            display: block;*/
+        }
+
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentPosition = 0;
+            var photo = $(".photo");
+            var photoNum = $(".photo").length;
+            var timeout = 3000;
+            var speed = 1200;
+            photo.eq(0).show();
+            function move(){
+                var nextPhoto = (currentPosition+1)%photoNum;
+                photo.eq(nextPhoto).fadeIn(speed);
+                photo.eq(currentPosition).fadeOut(speed);
+                currentPosition=nextPhoto;
+            }
+            setInterval(move,timeout);
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="photo">
+            <img src="../images/s-1.jpg" alt="">
+        </div>
+        <div class="photo">
+            <img src="../images/s-3.jpg" alt="">
+        </div>
+        <div class="photo">
+            <img src="../images/s-5.jpg" alt="">
+        </div>
+        <div class="photo">
+            <img src="../images/s-7.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

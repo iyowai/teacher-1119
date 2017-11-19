@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".slider").slick({
+                autoplay:true,
+                autoplaySpeed:600,
+                slidesToShow:1,
+                slidesToScroll:1,
+                dots:true,
+                fade:true
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-color: #ffa700;
+        }
+        .slider {
+            width: 800px;
+            margin: auto;
+        }
+        .slick-prev:before,.slick-next:before {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img src="../images/s-2.jpg" alt="">
+        <img src="../images/s-3.jpg" alt="">
+        <img src="../images/s-5.jpg" alt="">
+        <img src="../images/s-7.jpg" alt="">
+        <img src="../images/s-1.jpg" alt="">
+        <img src="../images/s-4.jpg" alt="">
+        <img src="../images/s-6.jpg" alt="">
+        <img src="../images/s-8.jpg" alt="">
+    </div>
+</body>
+</html>
